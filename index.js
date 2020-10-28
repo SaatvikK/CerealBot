@@ -156,7 +156,10 @@ client.on('message', msg => {
 
   //Setting the bot's status:
   client.user.setActivity("DM me to contact the staff!"); 
+
   //ModMail
-  
+  if(msg.channel.type === "dm") { //Checking if a user Directly Messaged the bot.
+    console.log("User dmed me");
+  }
 });
 client.login(token);

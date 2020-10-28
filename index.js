@@ -148,5 +148,15 @@ client.on('message', msg => {
 
     msg.channel.send("Your suggestion was successfully sent! <#" + client.channel.cache.get('769321633797242932') + ">"); 
   }
+
+
+
+
+  //Version 2.0 Stuff
+
+  //Setting the bot's status:
+  client.user.setActivity("DM me to contact the staff!"); 
+  //ModMail
+  
 });
 client.login(token);

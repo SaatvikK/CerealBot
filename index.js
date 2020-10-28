@@ -74,7 +74,7 @@ client.on('message', msg => {
       .setTitle('<!-- Cereal Bot v1.1. --!>')
       .setDescription("- The bot can now send suggestions for you in #suggestions, just do `>suggest [suggestion]`!\n- Increased efficiency of the bot (removed useless code).\n- Added 'success' message for `>suggest`.")
       .setTimestamp()
-      .setFooter(EmbedFooter);
+      .setFooter(EmbedFooter + " | | Full Change Log: https://github.com/SaatvikK/CerealBot/blob/main/README.md");
     
     msg.channel.send(ChangesEmbed);
   }

@@ -11,3 +11,7 @@ Version 1.1
 - Increased efficiency of the bot (removed useless code).
 - Added 'success' message for >suggest.
 
+Version 1.2
+- Added GitHub Repo link to the "ChangesEmbed".
+
+

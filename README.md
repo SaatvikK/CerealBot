@@ -7,7 +7,7 @@ My discord bot can check if a user sends a specific command (using an event list
 <-- Change Logs -->
 
 Version 1.1
-- The bot can now send suggestions for you in #suggestions, just do >suggest [suggestion]!
+- The bot can now send suggestions for you in #suggestions, just do >suggest [suggestion].
 - Increased efficiency of the bot (removed useless code).
 - Added 'success' message for >suggest.
 

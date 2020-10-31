@@ -168,12 +168,13 @@ client.on('message', msg => {
     msg.channel.send(ModMailEmbed);
   }
 
-  if(msg.channel.type === "dm") { //Checking if a user Directly Messaged the bot.
+  if(msg.channel.type === "dm" && msg.author.id != client.user.id) { //Checking if a user Directly Messaged the bot.
     if(msg.content.startsWith("New Report:")) {
       let MsgToSend
     }
     else {
-      msg.channel.send("If you're trying to send a Mod Mail Report:\n" + ModMailEmbed);
+      msg.channel.send("If you're trying to send a Mod Mail Report:\n");
+      msg.channel.send(ModMailEmbed);
     }
   }
 });

@@ -161,7 +161,7 @@ client.on('message', msg => {
   const ModMailEmbed = new Discord.MessageEmbed()
   .setColor(EmbedColor)
   .setTitle('Mod Mail Help')
-  .setDescription('**What is Mod Mail?**\nMod Mail is a way of reporting issues with people or the server to the staff.\nTo use ModMail to send a report to the staff, DM me with line: ">New Report: [Your Report Here]".\nEg: ">New Report: Someone broke rule 1 in general!"')
+  .setDescription('**What is Mod Mail?**\nMod Mail is a way of reporting issues with people or the server to the staff.\nTo use ModMail to send a report to the staff, DM me with line: ">New Report: [Your Report Here]".\nEg: >New Report: Someone broke rule 1 in general!"')
   .setTimestamp()
   .setFooter(EmbedFooter);
   if(msg.content.startsWith(prefix + "modmail")) {
@@ -169,8 +169,12 @@ client.on('message', msg => {
   }
 
   if(msg.channel.type === "dm" && msg.author.id != client.user.id) { //Checking if a user Directly Messaged the bot.
-    if(msg.content.startsWith("New Report:")) {
-      let MsgToSend
+    if(msg.content.startsWith(prefix + "report")) {
+      let MsgToSend = "";
+      for(i = 0; i < args.length; i++) {
+        MsgToSend = MsgToSend + " " + args[i];
+      }
+      msg.channel.send(MsgToSend);
     }
     else {
       msg.channel.send("If you're trying to send a Mod Mail Report:\n");

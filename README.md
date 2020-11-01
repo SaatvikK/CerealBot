@@ -13,9 +13,3 @@ Version 1.1
 
 Version 1.2
 - Added GitHub Repo link to the "ChangesEmbed".
-
-
-Version 2.0 - Release 02/11/2020
-- Added ModMail (users can DM bot to report an issue and the bot will send it to the staff).
-- Fixed bug with "success message" for the >suggest command (no success message, due to typo bug in code). 
-  *On line 149, original code was `client.channel.cache.get()`, new code is `client.channels.cache.get()`

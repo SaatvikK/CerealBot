@@ -145,8 +145,13 @@ client.on('message', msg => {
     catch(e) {
       unexpectError(msg);
     }
-
-    msg.channel.send("Your suggestion was successfully sent! <#" + client.channel.cache.get('769321633797242932') + ">"); 
+    try {
+      msg.channel.send("Your suggestion was successfully sent! <#" + client.channel.cache.get('769321633797242932') + ">"); 
+    }
+    catch(e) {
+      unexpectError(msg);
+      msg.channel.send("\n\n" + e);
+    }
   }
 
 
@@ -175,6 +180,7 @@ client.on('message', msg => {
         MsgToSend = MsgToSend + " " + args[i];
       }
       msg.channel.send(MsgToSend);
+      msg.channel.send(client.channels.cache.get("764424553992290324"));
     }
     else {
       msg.channel.send("If you're trying to send a Mod Mail Report:\n");

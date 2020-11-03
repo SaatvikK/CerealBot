@@ -154,53 +154,10 @@ client.on('message', msg => {
     }
   }
 
+  //v2.0
 
-
-
-  //Version 2.0 Stuff
-
-  //Setting the bot's status:
-  client.user.setActivity("DM 'NewReport' to me to contact the staff!"); 
-
-  //ModMail -------------------------------------------------------------------------------------------
-  const ModMailEmbed = new Discord.MessageEmbed()
-  .setColor(EmbedColor)
-  .setTitle('Mod Mail Help')
-  .setDescription('**What is Mod Mail?**\nMod Mail is a way of reporting issues with people or the server to the staff.\nTo use ModMail to send a report to the staff, DM me with line: ">New Report: [Your Report Here]".\nEg: >New Report: Someone broke rule 1 in general!"')
-  .setTimestamp()
-  .setFooter(EmbedFooter);
-  if(msg.content.startsWith(prefix + "modmail")) {
-    msg.channel.send(ModMailEmbed);
-  }
-
-  if(msg.channel.type === "dm" && msg.author.id != client.user.id) { //Checking if a user Directly Messaged the bot.
-    if(msg.content.startsWith(prefix + "report")) {
-      let MsgToSend = "";
-      for(i = 0; i < args.length; i++) {
-        MsgToSend = MsgToSend + " " + args[i];
-      }
-      msg.channel.send(MsgToSend);
-      const mmCategory = client.channels.cache.get("764424553992290324");
-      guild.channels.create(msg.member, { //creates channel with the name of the member who sent the msg.
-        type: "text", //text-channel
-        permissionOverwrites: [ //sets perms for the channe;
-          {
-            id: 762684411275116544, //people with this role (@everyone) cannot:
-            deny: ['VIEW_CHANNEL'],
-          },
-          {
-            id: 762993713311121419, //People with this role (@staff) CAN:
-            allow: ["VIEW_CHANNEL"], //https://discord.js.org/#/docs/main/master/class/Permissions?scrollTo=s-FLAGS
-            allow: ["SEND_MESSAGES"],
-            allow: ["READ_MESSAGE_HISTORY"]
-          }
-        ],
-      });
-    }
-    else {
-      msg.channel.send("If you're trying to send a Mod Mail Report:\n");
-      msg.channel.send(ModMailEmbed);
-    }
+  if(msg.contet.startsWith(prefix + "approve")) {
+    msg.channel.send(args[0]);
   }
 });
 client.login(token);

@@ -15,6 +15,7 @@ Version 1.2
 - Added GitHub Repo link to the "ChangesEmbed".
 
 Version 2.0 - Release 02/11/2020
+- Added numbers to suggestions.
 - Added Approved/Denial functions for suggestions.
 - Fixed bug with "success message" for the >suggest command (no success message, due to typo bug in code). 
   *On line 149, original code was `client.channel.cache.get()`, new code is `client.channels.cache.get()`
